@@ -8,7 +8,7 @@ class UserSchema(Schema):
             "required": "El nombre es requerido"
         }
     )
-
+    
     password = fields.Str(
         required = True, #lamda, funcion flecha de python
         validate = lambda x: len(x) > 0,
