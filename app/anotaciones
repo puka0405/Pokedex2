@@ -1,0 +1,28 @@
+                        CLASE DEL 19 DE FEBRERO DEL 2025
+En JS se definian los campos, propiedades, tipos si era requerido o no,
+Los modelos de python interactuan directamente con el modelo DB
+-----------------------------------------------------------------------------------------------------------------
+SCHEMAS
+Son los modelos de JS, son los que le dan la estructura, mediante un schema validamos información
+------------------------------------------------------------------------------------------------------------------
+CONTROLLERS
+Son las aperturas para que los usuarios intercatuen con el servidor, vienen crean los enpoints, el usuario viene 
+y consulta los endpoints en los controladores
+El CONTROLADOR pregunta al SCHEMA(valida) y se va al modelo
+--------------------------------------------------------------------------------------------------------------------
+ClasePadre
+Tiene 5 metodos "getOne, getAll, update, delete, create "
+Creamos 3 clases hijas, a partir de ella "Users, Pokemon, Favoritos", adoptan todos los metodos de la clase padre
+Asignamos los permisos que tendran las clases hijas
+INSTANCIANDO
+--------------------------------------------------------------------------------------------------------------------
+EJEMPLO FABRICA PATRON DE DISEÑO
+Dame el modelo favoritos, lo busca y si lo encuentra regresa ya INSTANCIANDO ya creo un objeto que ya podemos
+hacer consultas en la base de datos fav().getAll()  //Traeme todos los favoritos
+--------------------------------------------------------------------------------------------------------------------
+ObjectId, es un tipo de dato que se utiliza en MongoDB para identificar de forma única un documento en una colección
+--------------------------------------------------------------------------------------------------------------------
+getOne para saber que es, tenemos que ver que obtiene un parametro
+--------------------------------------------------------------------------------------------------------------------
+Modulo - entidades de la base de datos
+--------------------------------------------------------------------------------------------------------------------
