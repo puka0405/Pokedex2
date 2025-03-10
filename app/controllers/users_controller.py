@@ -35,11 +35,10 @@ def login():
 @bp.route("/register", methods=["POST"]) #
 def register():
     try:
-      print("ddddddddddddddddddddddddd",request.json)
       data = user_schema.load(request.json) #Valida la informacion que se esta mandando, si algo anda mal va lanzar un error, error de validación "try, except"
       data["password"]= EM.create_hash(data["password"]) #Encriptar la contraseña
       user_id = users_model.create(data)  #Retorna el id insertado tipo especifico ObjectId
-      return RM.success({user_id:str(user_id), "token":create_access_token(str(user_id))}) #200 es un código de respuesta
+      return RM.success({"user_id":str(user_id), "token":create_access_token(str(user_id))}) #200 es un código de respuesta
 
     except ValidationError as err:
        print(err)

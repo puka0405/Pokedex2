@@ -10,27 +10,7 @@ RM = ResponseManager()
 bp = Blueprint("pokemon", __name__, url_prefix="/pokemons")  #Blueprint se instancea, secciona el servidor en carpetitas
 pokemon_model = ModelFactory.get_model("pokemons") #Ir por el modelo de pokemones que ya declaramos
 
-#CREAR
-
-@bp.route("/create", methods=["POST"]) #
-def create():
-    try:
-        data = request.json
-        pokemon_id = pokemon_model.create(data)  #Retorna el id insertado tipo especifico ObjectId
-        return RM.success({pokemon_id:str(pokemon_id)}) #200 es un código de respuesta
-
-    except ValidationError as err:
-        return RM.error("Upss, Los parametros enviados son incorrectos"), 400
-
-#ELIMINAR
-
-@bp.route("/delete/<string:pokemon_id>", methods = ["DELETE"]) #Va venir con parametro con la ruta
-def delete(pokemon_id):
-    pokemon_model.delete(ObjectId(pokemon_id)) #Esta recibiendo dos parametros, objectid
-    return RM.success("Yeiii, pokemon eliminado con éxito jiji"), 200
-
 #OBTENER POR ID
-
 @bp.route("/get/<string:pokemon_id>", methods = ["GET"])
 @jwt_required()
 def get_pokemon(pokemon_id):
