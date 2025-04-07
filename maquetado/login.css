@@ -1,0 +1,37 @@
+body{
+    padding:0;
+    margin:0;
+}
+
+.container{
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+}
+
+.container-image{
+    margin:auto;
+}
+
+img{
+    width:200px;
+    height: 200px;
+}
+
+.container-form{
+    margin:auto;
+}
+
+.title{
+    font-size: 25px;
+    font-weight:bold;
+}
+
+.label{
+    font-size: 15px;
+    font-weight:bold;
+}
+
+input{
+    width: 100%;
+}
